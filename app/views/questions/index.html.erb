@@ -1,0 +1,15 @@
+<h1>세훈님에게 들어온 질문입니다.</h1>
+
+<% @qs.each do |q| %>
+  <p><h3><b><%= q.name %></b> : <%=q.content %></h3></p>
+  <p><a href="/edit/<%=q.id%>">수정</a> | <a href="/delete/<%=q.id%>">삭제</a></p>
+   <% q.comments.each do |c| %>
+     <p><%= c.id %> : <%= c.content %> | <a href="/comments/delete/<%=c.id%>">삭제</a></p>
+   <% end %>
+  <form action="/my-secret-view/<%=q.id%>/create" method=post>
+    <input type='textarea' name='comment' placeholder='답변달기'>
+    <input type='submit' value='답변ㄱ!'>
+  </form>
+  <hr>
+<% end %>
+<h2><a href='/'>Main으로 가기</a></h2>

@@ -1,0 +1,6 @@
+<h1>질문을 수정해 주세요.</h1>
+<form action="/update/<%=@question.id%>" method="post">
+    이름: <input type='text' name='input_name' value=<%=@question.name%>>
+    질문: <input type='text' name='input_content' value=<%=@question.content%>>
+    <input type='submit' value='물어보기!'>
+</form>
